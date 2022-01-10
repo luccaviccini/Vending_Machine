@@ -89,7 +89,7 @@ architecture mef of Maquina_Vendas is
 		
 				-- ESTADO 15 CENTAVOS	
 				when e15 =>
-					
+
 					saida_agua <= '0';
 					saida_refri <= '0';
 					saida25cent <= '0';
