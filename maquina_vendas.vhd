@@ -12,23 +12,29 @@ entity Maquina_Vendas is
 		-- ENTRADAS
 		Clk, Reset 			     		     : in std_logic;
 		moeda5cent, moeda10cent, moeda25cent : in boolean;
-		produto								 : in integer; --- a maquina possui 2 produtos, um que custa 25 e outro que custa 30 centavos.
+		produto								 : in std_logic_vector(1 downto 0); --- a maquina possui 2 produtos, um que custa 25 e outro que custa 30 centavos.
 		-- SAIDAS (agua + troco quando necessário)
 		saida_agua, saida_refri, saida25cent, saida10cent, saida5cent : out std_logic);
 
 end Maquina_Vendas;
 
 architecture mef of Maquina_Vendas is 
-
+0
 	type estado is (e0, e5, e10, e15, e20, e25, e30, e35, e40, e45, e50);
-	signal e_atual   : estado;
-	signal e_proximo : estado;
-	signal qtd_moeda5cent : integer := 10; -- a maquina só tem capacidade para 20 moedas de cada valor.
-	signal qtd_moeda10cent: integer := 10;
-	signal qtd_moeda25cent: integer := 10;
-	
+	signal e_atual, e_proximo  : estado;	
+	signal qtd_moeda5cent, qtd_moeda10cent, qtd_moeda25cent  : integer := 10; -- a maquina só tem capacidade para 20 moedas de cada valor.
+	signal valor_depositado : integer := 0;
+	signal preco 			: integer := 0;
 	
 	begin
+	-- declarando a instancia da ROM
+	rom1: entity work.rom_precos(rom_arq)
+	port map(
+			 Clk => Clk,
+			 produto => produto,
+			 preco => preco);
+	
+	
 		--- Processo para resetar o controlador
 		process (Clk, Reset)
 		begin	
@@ -46,13 +52,11 @@ architecture mef of Maquina_Vendas is
 			case e_atual is 			
 			-- ESTADO 0 (IDLE)
 				when e0 =>
-					
+					-- nao precisa checar para dar ok na saída.
 					saida_agua <= '0';
 					saida_refri <= '0';
-					saida25cent <= '0';
-					saida10cent <= '0';
-					saida5cent <= '0';
-					if   (moeda5cent)   then e_proximo <= e5; 	qtd_moeda5cent <= qtd_moeda5cent + 1;
+
+					if   (moeda5cent)   then e_proximo <= e5; valor_depositado <= valor_depositado + 5; 	qtd_moeda5cent <= qtd_moeda5cent + 1;
 					elsif(moeda10cent) 	then e_proximo <= e10;  qtd_moeda10cent <= qtd_moeda10cent + 1;
 					elsif(moeda25cent) 	then e_proximo <= e25;  qtd_moeda25cent <= qtd_moeda25cent + 1;
 					else e_proximo <= e0; -- se nada acontecer, permanece no mesmo estado
@@ -150,7 +154,7 @@ architecture mef of Maquina_Vendas is
 						saida_refri <= '0';
 						saida25cent <= '0';
 						saida10cent <= '0';
-						if (qtd_moeda5cent >0) then
+						if (qtd_moeda5cent > 0) then
 							saida5cent  <= '1'; qtd_moeda5cent <= qtd_moeda5cent - 1; -- nao tem opcao 
 							e_proximo <= e0;
 						else	

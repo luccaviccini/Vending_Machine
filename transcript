@@ -96,3 +96,180 @@ run -continue
 run -continue
 restart
 run
+# Compile of maquina_vendas.vhd failed with 1 errors.
+# Compile of maquina_vendas_tb.vhd was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ROM.vhd failed with 1 errors.
+# Compile of ROM.vhd failed with 1 errors.
+# Compile of ROM.vhd failed with 1 errors.
+# Compile of ROM.vhd failed with 1 errors.
+# Compile of ROM.vhd failed with 2 errors.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd failed with 3 errors.
+# Load canceled
+# Compile of rom_tb.vhd was successful.
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.rom_tb
+# End time: 16:42:14 on Jan 10,2022, Elapsed time: 4:56:02
+# Errors: 0, Warnings: 15
+# vsim -gui work.rom_tb 
+# Start time: 16:42:14 on Jan 10,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.rom_tb(sim)
+# Loading work.rom_precos(rom_arq)
+add wave -position insertpoint  \
+sim:/rom_tb/clk \
+sim:/rom_tb/tb_produto \
+sim:/rom_tb/tb_preco
+run
+# ** Fatal: (vsim-3734) Index value -2147483648 is out of range 0 to 3.
+#    Time: 0 ps  Iteration: 0  Process: /rom_tb/rom/line__28 File: C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd
+# Fatal error in Architecture rom_arq at C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd line 28
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd 28 Architecture rom_arq
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd 28 Architecture rom_arq
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd 28 Architecture rom_arq
+# 
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd failed with 1 errors.
+# Compile of rom_tb.vhd was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd failed with 5 errors.
+# 4 compiles, 1 failed with 5 errors.
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.rom_tb
+# End time: 16:48:10 on Jan 10,2022, Elapsed time: 0:05:56
+# Errors: 1, Warnings: 5
+# vsim -gui work.rom_tb 
+# Start time: 16:48:10 on Jan 10,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.rom_tb(sim)
+# Loading work.rom_precos(rom_arq)
+add wave -position insertpoint  \
+sim:/rom_tb/tb_produto \
+sim:/rom_tb/tb_preco
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rom_tb/rom
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.rom_tb
+# End time: 16:49:54 on Jan 10,2022, Elapsed time: 0:01:44
+# Errors: 0, Warnings: 3
+# vsim -gui work.rom_tb 
+# Start time: 16:49:54 on Jan 10,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.rom_tb(sim)
+# Loading work.rom_precos(rom_arq)
+add wave -position insertpoint  \
+sim:/rom_tb/tb_produto \
+sim:/rom_tb/tb_preco
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rom_tb/rom
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd failed with 10 errors.
+# 4 compiles, 1 failed with 10 errors.
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.rom_tb
+# End time: 16:52:54 on Jan 10,2022, Elapsed time: 0:03:00
+# Errors: 0, Warnings: 4
+# vsim -gui work.rom_tb 
+# Start time: 16:52:54 on Jan 10,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.rom_tb(sim)
+# Loading work.rom_precos(rom_arq)
+add wave -position insertpoint  \
+sim:/rom_tb/tb_produto \
+sim:/rom_tb/tb_preco
+run
+# ** Fatal: (vsim-3734) Index value -2147483648 is out of range 0 to 3.
+#    Time: 0 ps  Iteration: 0  Process: /rom_tb/rom/line__28 File: C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd
+# Fatal error in Architecture rom_arq at C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd line 28
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Lucca/Documents/GitHub/Vending_Machine/ROM.vhd 28 Architecture rom_arq
+# 
+# Compile of maquina_vendas.vhd was successful.
+# Compile of maquina_vendas_tb.vhd was successful.
+# Compile of ROM.vhd was successful.
+# Compile of rom_tb.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.rom_tb
+# End time: 16:56:19 on Jan 10,2022, Elapsed time: 0:03:25
+# Errors: 1, Warnings: 2
+# vsim -gui work.rom_tb 
+# Start time: 16:56:19 on Jan 10,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.rom_tb(sim)
+# Loading work.rom_precos(rom_arq)
+add wave -position insertpoint  \
+sim:/rom_tb/tb_produto \
+sim:/rom_tb/tb_preco
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rom_tb/rom
